@@ -1,6 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Example</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    position: relative;
+    height: 100vh;
+  }
+
+  #mainButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #termsButton {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 8px;
+    padding: 2px 4px;
+    cursor: pointer;
+  }
+
+  #termsContainer {
+    display: none;
+    padding: 20px;
+  }
+</style>
+</head>
 <body>
-a
+
+<button id="mainButton">Click</button>
+<button id="termsButton">terms & conditions</button>
+
+<div id="termsContainer">
+  <h2>Terms & Conditions</h2>
+  <p>
+    Definitions: "We", "us", and "our" refer to the creators of this website. "You" refers to the user of this website. "Site" refers to this website and all its content.
+  </p>
+    By accessing this site, you agree to be bound by these terms & conditions. You also confirm that you are at least 6 months old, and are not currently eating a pear.
+  </p>
+  <p>
+    Upon using this site, you agree that we can steal your credit card information and purchase anything we want, except for pears, because we don't want to eat them. We also reserve the right to change these terms at any time without notice, so please check back frequently.
+  </p>
+</div>
+
+<script>
+  const mainButton = document.getElementById('mainButton');
+  mainButton.addEventListener('click', () => {
+    mainButton.textContent = 'Thanks!';
+    mainButton.disabled = true;
+  });
+
+  const termsButton = document.getElementById('termsButton');
+  const termsContainer = document.getElementById('termsContainer');
+  termsButton.addEventListener('click', () => {
+    document.body.innerHTML = '';
+    document.body.appendChild(termsContainer);
+    termsContainer.style.display = 'block';
+  });
+</script>
+
 </body>
 </html>
